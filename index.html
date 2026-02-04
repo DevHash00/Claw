@@ -3,61 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Horizon Relocation Agency</title>
+    <title>Global Horizon | International Career Relocation Experts</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Global Horizon</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#onboarding">Onboarding</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="Global Horizon Logo">
+                    <span>Global Horizon</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#onboarding">Onboarding</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact" class="cta-button">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Global Horizon: Your International Career Partner</h1>
-            <p>Seamless relocation and career transitions worldwide</p>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Your Global Career Journey Starts Here</h1>
+                    <p>Seamless international relocation and career transitions for ambitious professionals</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Successful Relocations</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Countries Served</p>
+                        </div>
+                        <div class="stat">
+                            <h3>98%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                    <a href="#services" class="explore-button">Explore Our Services</a>
+                </div>
+            </div>
         </section>
 
-        <section id="onboarding">
-            <h2>New Staff Onboarding</h2>
-            <div class="onboarding-steps">
-                <div class="step">
-                    <h3>1. Pre-Arrival Preparation</h3>
-                    <ul>
-                        <li>Document verification</li>
-                        <li>Visa and work permit assistance</li>
-                        <li>Initial cultural training</li>
-                    </ul>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Comprehensive Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-passport"></i>
+                        <h3>Visa & Immigration</h3>
+                        <p>Expert guidance through complex visa processes and immigration requirements.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-building"></i>
+                        <h3>Corporate Relocation</h3>
+                        <p>End-to-end support for companies moving talent across international borders.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Cultural Integration</h3>
+                        <p>Tailored training to help professionals adapt to new cultural environments.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-home"></i>
+                        <h3>Housing & Settlement</h3>
+                        <p>Assistance with finding suitable accommodation and local community integration.</p>
+                    </div>
                 </div>
-                <div class="step">
-                    <h3>2. Arrival Support</h3>
-                    <ul>
-                        <li>Airport pickup</li>
-                        <li>Temporary accommodation</li>
-                        <li>Local SIM card and bank account setup</li>
-                    </ul>
+            </div>
+        </section>
+
+        <section id="onboarding" class="onboarding">
+            <div class="container">
+                <h2>Your Relocation Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Pre-Arrival Consultation</h3>
+                            <p>Comprehensive assessment of your professional and personal relocation needs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Documentation & Compliance</h3>
+                            <p>Meticulous handling of all legal and administrative requirements.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Destination Orientation</h3>
+                            <p>In-depth cultural and professional landscape briefing for your new location.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Ongoing Support</h3>
+                            <p>Continuous assistance to ensure smooth transition and professional success.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="step">
-                    <h3>3. First 90 Days</h3>
-                    <ul>
-                        <li>Company orientation</li>
-                        <li>Language and cultural workshops</li>
-                        <li>Mentorship program</li>
-                    </ul>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial">
+                        <p>"Global Horizon transformed my international career move. Their support was exceptional!"</p>
+                        <div class="client-info">
+                            <img src="client1.jpg" alt="Client">
+                            <span>- Sarah Chen, Tech Professional</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Start Your Global Journey</h2>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <select>
+                        <option>Interested Service</option>
+                        <option>Visa & Immigration</option>
+                        <option>Corporate Relocation</option>
+                        <option>Cultural Training</option>
+                    </select>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Inquiry</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Global Horizon Relocation Agency</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Global Horizon Logo">
+                    <p>Your Partner in Global Career Mobility</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-column">
+                        <h4>Services</h4>
+                        <a href="#services">Visa Support</a>
+                        <a href="#services">Relocation</a>
+                        <a href="#services">Cultural Training</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Press</a>
+                    </div>
+                    <div class="link-column">
+                        <h4>Support</h4>
+                        <a href="#contact">Contact</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Help Center</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2026 Global Horizon Relocation Agency. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
