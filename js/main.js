@@ -10,9 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initCourseFilter();
   initBlogFilter();
+  initLoadMore();
   initCurriculum();
   initSmoothScroll();
   initNewsletterForm();
+  initSearch();
+  initProgressTracking();
+  initLazyLoading();
+  initTabs();
+  initPlaceholderLinks();
 });
 
 /* ============================================
@@ -152,6 +158,7 @@ function initBlogFilter() {
   
   const filterButtons = filterContainer.querySelectorAll('.course-filter__btn');
   const blogCards = document.querySelectorAll('.blog-card');
+  const blogGrid = document.querySelector('.blog-grid');
   
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -164,7 +171,9 @@ function initBlogFilter() {
       
       // Filter blog posts
       blogCards.forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
+        const matchesFilter = filter === 'all' || card.dataset.category === filter;
+        const isCollapsed = blogGrid?.dataset.collapsed === 'true' && card.dataset.collapsed === 'true';
+        if (matchesFilter && !isCollapsed) {
           card.style.display = '';
           card.classList.add('animate-fadeInUp');
         } else {
@@ -173,6 +182,47 @@ function initBlogFilter() {
         }
       });
     });
+  });
+}
+
+/* ============================================
+   Blog Load More
+   ============================================ */
+function initLoadMore() {
+  const loadMoreBtn = document.querySelector('.js-load-more');
+  if (!loadMoreBtn) return;
+
+  const blogGrid = document.querySelector('.blog-grid');
+  if (!blogGrid) return;
+
+  const cards = Array.from(blogGrid.querySelectorAll('.blog-card'));
+  const initialCount = parseInt(loadMoreBtn.dataset.initial || '6', 10);
+
+  if (cards.length <= initialCount) {
+    loadMoreBtn.style.display = 'none';
+    return;
+  }
+
+  blogGrid.dataset.collapsed = 'true';
+  cards.forEach((card, index) => {
+    if (index >= initialCount) {
+      card.dataset.collapsed = 'true';
+      card.style.display = 'none';
+    }
+  });
+
+  loadMoreBtn.addEventListener('click', function() {
+    cards.forEach(card => {
+      delete card.dataset.collapsed;
+      card.style.display = '';
+    });
+    blogGrid.dataset.collapsed = 'false';
+    loadMoreBtn.style.display = 'none';
+
+    const activeBtn = document.querySelector('.blog-filter .course-filter__btn.active');
+    if (activeBtn) {
+      activeBtn.click();
+    }
   });
 }
 
@@ -236,13 +286,16 @@ function initSmoothScroll() {
    Newsletter Form
    ============================================ */
 function initNewsletterForm() {
-  const forms = document.querySelectorAll('.footer__newsletter-form');
+  const forms = document.querySelectorAll('.footer__newsletter-form, .js-newsletter-form');
   
   forms.forEach(form => {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const input = form.querySelector('.footer__newsletter-input');
+      const input = form.querySelector('.footer__newsletter-input')
+        || form.querySelector('.form-input')
+        || form.querySelector('input[type="email"]');
+      if (!input) return;
       const email = input.value.trim();
       
       if (!email || !isValidEmail(email)) {
@@ -258,6 +311,20 @@ function initNewsletterForm() {
         input.value = '';
         input.disabled = false;
       }, 1000);
+    });
+  });
+}
+
+/* ============================================
+   Placeholder Links
+   ============================================ */
+function initPlaceholderLinks() {
+  const placeholderLinks = document.querySelectorAll('a[href="#"]');
+
+  placeholderLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      showNotification('This link will be available soon.', 'info');
     });
   });
 }

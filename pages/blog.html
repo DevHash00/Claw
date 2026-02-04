@@ -333,7 +333,7 @@
       
       <!-- Load More -->
       <div class="text-center mt-12">
-        <button class="btn btn--outline btn--lg">Load More Articles</button>
+        <button class="btn btn--outline btn--lg js-load-more" data-initial="6">Load More Articles</button>
       </div>
     </div>
   </section>
@@ -348,7 +348,7 @@
           Get the latest insights, frameworks, and strategic thinking delivered 
           directly to your inbox. No spam, just valuable content.
         </p>
-        <form style="display: flex; gap: var(--space-3); max-width: 450px; margin: 0 auto;">
+        <form class="js-newsletter-form" style="display: flex; gap: var(--space-3); max-width: 450px; margin: 0 auto;">
           <input type="email" placeholder="Enter your email" class="form-input" style="flex: 1;" required>
           <button type="submit" class="btn btn--primary">Subscribe</button>
         </form>
