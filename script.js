@@ -1,3 +1,7 @@
+// Global Horizon Website JavaScript
+// Last updated: 2026-02-03
+// Purpose: Handles interactive elements and dynamic content
+
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
